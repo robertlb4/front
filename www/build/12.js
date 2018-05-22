@@ -1,15 +1,15 @@
 webpackJsonp([12],{
 
-/***/ 523:
+/***/ 750:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginPageModule", function() { return LoginPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuPageModule", function() { return MenuPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__login__ = __webpack_require__(542);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(176);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__menu__ = __webpack_require__(770);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -20,40 +20,37 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var LoginPageModule = /** @class */ (function () {
-    function LoginPageModule() {
+var MenuPageModule = /** @class */ (function () {
+    function MenuPageModule() {
     }
-    LoginPageModule = __decorate([
+    MenuPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_3__login__["a" /* LoginPage */],
+                __WEBPACK_IMPORTED_MODULE_3__menu__["a" /* MenuPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__login__["a" /* LoginPage */]),
+                __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_3__menu__["a" /* MenuPage */]),
                 __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["b" /* TranslateModule */].forChild()
             ],
             exports: [
-                __WEBPACK_IMPORTED_MODULE_3__login__["a" /* LoginPage */]
+                __WEBPACK_IMPORTED_MODULE_3__menu__["a" /* MenuPage */]
             ]
         })
-    ], LoginPageModule);
-    return LoginPageModule;
+    ], MenuPageModule);
+    return MenuPageModule;
 }());
 
-//# sourceMappingURL=login.module.js.map
+//# sourceMappingURL=menu.module.js.map
 
 /***/ }),
 
-/***/ 542:
+/***/ 770:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenuPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__ = __webpack_require__(126);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers__ = __webpack_require__(127);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4____ = __webpack_require__(360);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(175);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -65,58 +62,38 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
-
-
-
-var LoginPage = /** @class */ (function () {
-    function LoginPage(navCtrl, user, toastCtrl, translateService) {
-        var _this = this;
+var MenuPage = /** @class */ (function () {
+    function MenuPage(navCtrl) {
         this.navCtrl = navCtrl;
-        this.user = user;
-        this.toastCtrl = toastCtrl;
-        this.translateService = translateService;
-        this.userLogin = {
-            email: '',
-            password: ''
-        };
-        this.submitAttempt = false;
-        this.translateService.get('LOGIN_ERROR').subscribe(function (value) {
-            _this.loginErrorString = value;
-        });
+        this.rootPage = 'ContentPage';
+        // used for an example of ngFor and navigation
+        this.pages = [
+            { title: 'Sign in', component: 'LoginPage' },
+            { title: 'Signup', component: 'SignupPage' }
+        ];
     }
-    LoginPage.prototype.loginUser = function () {
-        var _this = this;
-        return this.user.loginCustom(this.userLogin).subscribe(function (userLog) {
-            console.log(userLog, 'Login Successful');
-            sessionStorage.setItem('token', userLog.token);
-            sessionStorage.setItem('userId', userLog.userId);
-            _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4____["b" /* MainPage */]);
-        }, function (err) {
-            _this.submitAttempt = true;
-            console.log(err);
-            var toast = _this.toastCtrl.create({
-                message: 'Invalid email or password',
-                duration: 2000,
-                position: 'top'
-            });
-            toast.present();
-            _this.userLogin.email = '';
-            _this.userLogin.password = '';
-        });
+    MenuPage.prototype.ionViewDidLoad = function () {
+        console.log('Hello MenuPage Page');
     };
-    LoginPage = __decorate([
+    MenuPage.prototype.openPage = function (page) {
+        // Reset the content nav to have just this page
+        // we wouldn't want the back button to show in this scenario
+        this.nav.setRoot(page.component);
+    };
+    __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */]),
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* Nav */])
+    ], MenuPage.prototype, "nav", void 0);
+    MenuPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-login',template:/*ion-inline-start:"c:\Users\galen\Documents\Visual Studio Code\myProjects\groupProject\time2retire\front\front\src\pages\login\login.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>{{ \'LOGIN_TITLE\' | translate }}</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content>\n\n  <!-- <form (submit)="doLogin()">\n\n    <ion-list>\n\n\n\n      <ion-item>\n\n        <ion-label fixed>{{ \'EMAIL\' | translate }}</ion-label>\n\n        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>\n\n      </ion-item>\n\n\n\n\n\n      Want to use a Username instead of an Email? Here you go:\n\n\n\n      <ion-item>\n\n        <ion-label floating>{{ \'USERNAME\' | translate }}</ion-label>\n\n        <ion-input type="text" [(ngModel)]="account.username" name="username"></ion-input>\n\n      </ion-item>\n\n\n\n\n\n      <ion-item>\n\n        <ion-label fixed>{{ \'PASSWORD\' | translate }}</ion-label>\n\n        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>\n\n      </ion-item>\n\n\n\n      <div padding>\n\n        <button ion-button color="secondary" block>{{ \'LOGIN_BUTTON\' | translate }}</button>\n\n      </div>\n\n\n\n    </ion-list>\n\n  </form> -->\n\n\n\n  <div align=\'center\'>\n\n    <h5 *ngIf="submitAttempt" style="color: #ea6153;">Invalid email or password</h5>\n\n  </div>\n\n\n\n  <form (submit)=\'loginUser()\'>\n\n\n\n    <ion-list>\n\n\n\n      <ion-item>\n\n        <ion-label fixed>Email</ion-label>\n\n        <ion-input type=\'email\' name=\'email\' [(ngModel)]=\'userLogin.email\'></ion-input>\n\n      </ion-item>\n\n\n\n      <ion-item>\n\n        <ion-label fixed>Password</ion-label>\n\n        <ion-input type=\'password\' name=\'password\' [(ngModel)]=\'userLogin.password\'></ion-input>\n\n      </ion-item>\n\n\n\n      <div padding>\n\n        <button ion-button color=\'primary\' block>Sign In</button>\n\n      </div>\n\n\n\n    </ion-list>\n\n\n\n  </form>\n\n</ion-content>'/*ion-inline-end:"c:\Users\galen\Documents\Visual Studio Code\myProjects\groupProject\time2retire\front\front\src\pages\login\login.html"*/
+            selector: 'page-menu',template:/*ion-inline-start:"c:\Users\galen\Documents\Visual Studio Code\myProjects\groupProject\time2retire\front\front\src\pages\menu\menu.html"*/'<ion-menu [content]="content">\n\n  <ion-content>\n\n    <ion-list>\n\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n\n        {{p.title}}\n\n      </button>\n\n    </ion-list>\n\n  </ion-content>\n\n</ion-menu>\n\n\n\n<ion-nav #content [root]="rootPage"></ion-nav>\n\n\n\n'/*ion-inline-end:"c:\Users\galen\Documents\Visual Studio Code\myProjects\groupProject\time2retire\front\front\src\pages\menu\menu.html"*/
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */],
-            __WEBPACK_IMPORTED_MODULE_3__providers__["d" /* User */],
-            __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["l" /* ToastController */],
-            __WEBPACK_IMPORTED_MODULE_1__ngx_translate_core__["c" /* TranslateService */]])
-    ], LoginPage);
-    return LoginPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */]])
+    ], MenuPage);
+    return MenuPage;
 }());
 
-//# sourceMappingURL=login.js.map
+//# sourceMappingURL=menu.js.map
 
 /***/ })
 

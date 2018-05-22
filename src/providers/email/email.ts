@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { nodemailer } from 'nodemailer';
 
 /*
   Generated class for the EmailProvider provider.
@@ -15,7 +14,7 @@ export class EmailProvider {
     console.log('Hello EmailProvider Provider');
   }
 
-  http.post('/send', (req, res) => {
+  app.post('/send', (req, res) => {
     const output = `
         <p>You have a new contact request</p>
         <h3>Contact Details</h3>

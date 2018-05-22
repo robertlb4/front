@@ -4,6 +4,7 @@ import { IonicPage, NavController, ToastController } from 'ionic-angular';
 
 import { User } from '../../providers';
 import { MainPage } from '../';
+import { ForgotPasswordPage } from '../forgot-password/forgot-password';
 
 @IonicPage()
 @Component({
@@ -54,6 +55,10 @@ export class LoginPage {
         this.userLogin.password = '';
       }
     )
+  }
+
+  gotoForgotPassword() {
+    this.navCtrl.push(ForgotPasswordPage)
   }
 
 }
