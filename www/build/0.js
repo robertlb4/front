@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 518:
+/***/ 517:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ChartPageModule", function() { return ChartPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(125);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__chart__ = __webpack_require__(536);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__chart__ = __webpack_require__(535);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng2_charts_ng2_charts__ = __webpack_require__(363);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng2_charts_ng2_charts___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ng2_charts_ng2_charts__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -42,7 +42,7 @@ var ChartPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 536:
+/***/ 535:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51,7 +51,7 @@ var ChartPageModule = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(125);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_chart_js__ = __webpack_require__(361);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_chart_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chartjs_plugin_datalabels__ = __webpack_require__(537);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chartjs_plugin_datalabels__ = __webpack_require__(536);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_chartjs_plugin_datalabels___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_chartjs_plugin_datalabels__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -157,7 +157,7 @@ var ChartPage = /** @class */ (function () {
     };
     ChartPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-            selector: 'page-chart',template:/*ion-inline-start:"/Users/waynelester/Dropbox/Coding/Time2Retire/front/src/pages/chart/chart.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Chart</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <div style = "display: block">\n  <canvas class = "chart" baseChart width="400" height="400"\n  [datasets]="barChartData"\n  [labels]="barChartLabels"\n  [options]="barChartOptions"\n  [legend]="barChartLegend"\n  [chartType]="barChartType"\n  (chartHover)="chartHovered($event)"\n  (chartClick)="chartClicked($event)">\n</canvas>\n</div>\n<input [(ngModel)]="x"><button (click)="randomize()">+</button>\n</ion-content>\n'/*ion-inline-end:"/Users/waynelester/Dropbox/Coding/Time2Retire/front/src/pages/chart/chart.html"*/,
+            selector: 'page-chart',template:/*ion-inline-start:"c:\Users\galen\Documents\Visual Studio Code\myProjects\groupProject\time2retire\front\front\src\pages\chart\chart.html"*/'<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>Chart</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n  <div style = "display: block">\n\n  <canvas class = "chart" baseChart width="400" height="400"\n\n  [datasets]="barChartData"\n\n  [labels]="barChartLabels"\n\n  [options]="barChartOptions"\n\n  [legend]="barChartLegend"\n\n  [chartType]="barChartType"\n\n  (chartHover)="chartHovered($event)"\n\n  (chartClick)="chartClicked($event)">\n\n</canvas>\n\n</div>\n\n<input [(ngModel)]="x"><button (click)="randomize()">+</button>\n\n</ion-content>\n\n'/*ion-inline-end:"c:\Users\galen\Documents\Visual Studio Code\myProjects\groupProject\time2retire\front\front\src\pages\chart\chart.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* NavParams */]])
     ], ChartPage);
@@ -168,7 +168,7 @@ var ChartPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 537:
+/***/ 536:
 /***/ (function(module, exports, __webpack_require__) {
 
 /*!
