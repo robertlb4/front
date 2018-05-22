@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject'
+import { Chart } from 'chart.js'
+import * as ChartLabels from 'chartjs-plugin-datalabels';
+
 @IonicPage()
 @Component({
   selector: 'page-chart',
@@ -13,8 +15,22 @@ export class ChartPage {
   data2: any = 2055;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {}
-  
+
+  ngOnInit() {
+    Chart.pluginService.register(ChartLabels);
+  }
   public barChartOptions:any = {
+    plugins: {
+      datalabels: {
+        display: true,
+        align: 'end',
+        anchor: 'end',
+        font: {
+          weight: 'bold',
+          size: 25,
+        }
+      }
+    },
     responsive: true,
     maintainAspectRatio: true,
     legend: {
@@ -62,18 +78,14 @@ export class ChartPage {
     console.log(e);
   }
 
-  // public increment(){
-  //   this.x += 50
-  //   this.barChartData[0].data[0]
-  //   console.log(this.barChartData[0].data[0])
-  // }
-
   public barChartData:any[] = [
-    {data: [this.data1], label: 'Monthly Benefit Amt.'},
-    {data: [this.data2], label: 'Break-Even Year'}
+    {data: [this.data1], label: 'Monthly Benefit Amt.', datlabels: {display:true,align:'end',anchor:'end'}},
+    {data: [this.data2], label: 'Break-Even Year'},
+    
   ];
 
   public randomize():void {
+    console.log()
     this.x += 50;
     let _barChartData:Array<any> = new Array(this.barChartData.length);
     for (let i = 0; i < this.barChartData.length; i++) {
