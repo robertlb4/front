@@ -28,6 +28,8 @@ export class TutorialPage {
       "TUTORIAL_SLIDE2_DESCRIPTION",
       "TUTORIAL_SLIDE3_TITLE",
       "TUTORIAL_SLIDE3_DESCRIPTION",
+      "TUTORIAL_SLIDE_TEST_TITLE",
+      "TUTORIAL_SLIDE_TEST_DESCRIPTION",
     ]).subscribe(
       (values) => {
         console.log(ENV)
@@ -36,7 +38,7 @@ export class TutorialPage {
           {
             title: values.TUTORIAL_SLIDE1_TITLE,
             description: values.TUTORIAL_SLIDE1_DESCRIPTION,
-            image: 'assets/img/ica-slidebox-img-1.png',
+            image: 'assets/img/adult-application-asian-733856.jpg',
           },
           {
             title: values.TUTORIAL_SLIDE2_TITLE,
@@ -47,6 +49,11 @@ export class TutorialPage {
             title: values.TUTORIAL_SLIDE3_TITLE,
             description: values.TUTORIAL_SLIDE3_DESCRIPTION,
             image: 'assets/img/ica-slidebox-img-3.png',
+          },
+          {
+            title: values.TUTORIAL_SLIDE_TEST_TITLE,
+            description: values.TUTORIAL_SLIDE_TEST_DESCRIPTION,
+            image: 'assets/img/badu-live.png',
           }
         ];
       });
